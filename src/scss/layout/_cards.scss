@@ -1,0 +1,35 @@
+@use '/src/scss/settings/variables' as vars;
+
+.cards {
+  .card {
+    margin-top: 40px;
+    margin-bottom: 48px;
+    box-shadow: vars.$shadow;
+
+    .card-header {
+      img {
+        width: 100%;
+        border-radius: 8px 8px 0 0;
+        margin-bottom: -5px;
+      }
+    }
+
+    .card-body {
+      padding: 30px 15px;
+      background-color: vars.$primary-color;
+      border-radius: 0 0 8px 8px;
+
+      .title {
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        margin-bottom: 24px;
+      }
+
+      .text {
+        line-height: 1.8;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@use '/src/scss/layout/grid';
+@use '/src/scss/settings/variables' as vars;
+@use '/src/scss/settings/mixin' as mixin;
+
+.about {
+  background-color: vars.$primary-color;
+  padding: 30px;
+  line-height: 1.8;
+
+  article {
+    .titile {
+      margin-bottom: 20px;
+
+      @include grid.media-breakpoint-up(lg) {
+        font-size: 28px;
+      }
+    }
+
+    p {
+      margin-bottom: 24px;
+
+      a {
+        text-decoration: underline;
+        color: vars.$btn-blue-color;
+      }
+    }
+
+    .about-btn {
+      @include mixin.button;
+      background-color: vars.$btn-blue-color;
+      color: vars.$primary-color;
+      margin: 0;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .fa-file {
+      @include mixin.icon;
+      font-size: 20px;
+      padding: 4px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    &:first-child {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 2px solid vars.$secondary-color;
+
+      @include grid.media-breakpoint-up(md) {
+        order: 2;
+        border-bottom: none;
+      }
+    }
+  }
+}

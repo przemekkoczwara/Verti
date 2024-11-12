@@ -1,0 +1,93 @@
+@use '/src/scss/settings/variables' as vars;
+@use '/src/scss//layout/grid' as grid;
+
+.footer {
+  display: block;
+  padding: 40px;
+  text-align: left;
+  box-shadow: rgba(126, 128, 137, 0.57);
+  opacity: 0.7;
+
+  @include grid.media-breakpoint-up(md) {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .card {
+    margin-bottom: 40px;
+    border-bottom: 2px solid rgb(222, 213, 213);
+
+    @include grid.media-breakpoint-up(md) {
+      border-bottom: none;
+    }
+
+    .title {
+      margin-bottom: 20px;
+    }
+
+    .links {
+      li {
+        list-style-type: none;
+        line-height: 2;
+        text-decoration: underline;
+
+        &:last-child {
+          margin-bottom: 50px;
+        }
+      }
+
+      a {
+        color: vars.$text-color;
+      }
+    }
+
+    .social-links {
+      li {
+        list-style-type: none;
+        display: inline-block;
+        font-size: 20px;
+        line-height: 2;
+        margin-right: 5px;
+
+        &:last-child {
+          margin-bottom: 20px;
+        }
+
+        a {
+          background-color: vars.$text-color;
+          color: vars.$primary-color;
+          padding: 5px;
+          border-radius: 8px;
+
+          &:hover {
+            background-color: rgb(141, 144, 144);
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+    p {
+      line-height: 2;
+
+      &:last-child {
+        margin-bottom: 50px;
+      }
+    }
+  }
+  .contact {
+    opacity: 0.6;
+
+    @include grid.media-breakpoint-up(lg) {
+      display: flex;
+      justify-content: center;
+    }
+    p {
+      line-height: 2;
+    }
+
+    a {
+      text-decoration: underline;
+      color: vars.$text-color;
+    }
+  }
+}

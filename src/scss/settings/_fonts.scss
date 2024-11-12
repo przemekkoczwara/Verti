@@ -1,0 +1,14 @@
+@use '/src/scss/settings/variables' as vars;
+@use 'sass:list';
+
+// font open-sans
+
+@for $i from 1 through list.length(vars.$font-weights) {
+  .open-sans-#{list.nth(vars.$font-weights, $i)} {
+    font-family: 'Open Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: list.nth(vars.$font-weights, $i);
+    font-style: normal;
+    font-variation-settings: 'wdth' 100;
+  }
+}

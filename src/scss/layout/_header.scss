@@ -1,0 +1,127 @@
+@use '/src/scss/layout/grid' as grid;
+@use '/src/scss/settings/variables' as vars;
+
+@use '/src/scss/settings/mixin' as mixin;
+
+.header {
+  position: relative;
+
+ 
+
+  .menu-toggle {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.5;
+    color: vars.$secondary-color;
+    border-radius: 8px;
+    padding: 8px 20px;
+    display: inline-block;
+    margin-top: 10px;
+
+    @include grid.media-breakpoint-up(md) {
+      display: none;
+    }
+  }
+
+  nav {
+    .logo {
+      font-size: 36px;
+      font-style: italic;
+      background-color: vars.$logo-color;
+      color: vars.$primary-color;
+      max-width: fit-content;
+      padding: 8px 20px;
+      border-radius: 8px;
+
+      @include grid.media-breakpoint-up(md) {
+        margin: 16px 0;
+      }
+    }
+
+    .row {
+      @include grid.media-breakpoint-up(md) {
+        align-items: center;
+      }
+    }
+
+    .navbar {
+      background-color: vars.$primary-color;
+      border-radius: 8px;
+      padding: 16px;
+      list-style: none;
+      line-height: 2.2;
+      display: none;
+
+
+      @include grid.media-breakpoint-up(lg) {
+        font-size: 18px;
+      }
+
+      a {
+        color: vars.$text-color;
+
+        &:hover {
+          background-color: rgb(141, 144, 144);
+          padding: 5px;
+          border-radius: 8px;
+        }
+      }
+
+      @include grid.media-breakpoint-up(md) {
+        display: flex;
+        justify-content: flex-end;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+      }
+    }
+    // checkbox input
+    input {
+      display: none;
+    }
+    // open menu
+    input:checked ~ .navbar {
+      display: block;
+    }
+  }
+}
+
+.banner {
+  background-color: vars.$primary-color;
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: vars.$shadow;
+  font-size: 16px;
+
+  @include grid.media-breakpoint-up(lg) {
+    font-size: 1.4rem;
+  }
+}
+.banner_btn {
+  &:hover {
+    opacity: 0.8;
+  }
+  @include mixin.button;
+
+  &:first-child {
+    background-color: vars.$btn-blue-color;
+    color: vars.$primary-color;
+  }
+
+  @include grid.media-breakpoint-up(lg) {
+    font-size: 1.4rem;
+  }
+}
+
+.fa-arrow-right {
+  @include mixin.icon;
+}
+
+.fa-question {
+  @include mixin.icon;
+
+  padding: 5px;
+  color: vars.$primary-color;
+  background-color: vars.$text-color;
+}
